@@ -7,6 +7,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     max-width: 100vw;
     overflow-x: hidden;
@@ -47,10 +51,13 @@ input::placeholder {
 
 button {
     cursor: pointer;
+    border: none;
+    background: none;
 }
 
 h1,
-h2 {
+h2,
+h4 {
     text-align: center;
     font-weight: 700;
     line-height: 1.25;
@@ -60,12 +67,18 @@ h1 {
     max-width: 720px;
     font-size: 48px;
     margin-bottom: 16px;
+    color: orange;
 }
 
 h2 {
     font-size: 28px;
     margin-bottom: 28px;
     text-transform: uppercase;
+}
+
+h4 {
+    color: #fff;
+    font-size: 16px;
 }
 
 .container {
@@ -83,8 +96,16 @@ h2 {
     text-emphasis: bold;
 }
 
+.btn {
+    transition: all 250ms ease;
+}
+
 .btn:active {
-    transform: translateY(4px);
+    transform: scale(0.90);
+}
+
+.btn:hover {
+    color: orange;
 }
 
 /*
@@ -108,10 +129,6 @@ nav {
 .logo {
     width: 100%;
     border-radius: 5px;
-}
-
-.nav__links {
- 
 }
 
 .nav__link {
@@ -180,6 +197,7 @@ nav {
     display: flex;
     justify-content: space-between;
     position: relative;
+    width: 350px;
     margin-bottom: 16px;
     padding: 5px;
 }
@@ -197,14 +215,7 @@ nav {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    border: none;
-    background: none;
     padding-right: 5px;
-    transition: all 300ms ease;
-}
-
-.landing__search--button:hover {
-    color: orange;
 }
 
 /*
@@ -238,7 +249,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .footer__links {
@@ -254,4 +264,216 @@ footer {
     font-weight: bold;
 }
 
+/*
+    FOOD BROWSE
+*/
 
+.food__results {
+    min-height: 100vh;
+}
+
+.food__browse {
+    position: relative;
+}
+
+.overlay {
+    background-image: url(/assets/greek-food-background-traditional-different-greek-dishes-set-greek-food-background-traditional-different-greek-dishes-set-top-view-178761927.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.overlay:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(41,25,71,.83);
+    pointer-events: none;
+}
+
+/*
+    FOOD BROWSE RESULTS
+*/
+
+.recipe__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+}
+
+.food__results--wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+}
+
+.title__wrapper {
+    width: 100%;
+}
+
+.food__results--title {
+    text-align: left;
+    font-weight: 400;
+    margin: 0;
+}
+
+.results__filter--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+}
+
+.results__filter {
+    font-size: 24px;
+}
+
+/*
+    RECIPE CARD
+*/
+
+.recipes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.recipe__card--wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2%;
+    overflow: hidden;
+    width: 25%;
+    max-width: 188px;
+    max-height: 250px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.15);
+    transition: all 300ms ease;
+}
+
+.recipe__card--wrapper:hover {
+    transform: scale(1.05);
+}
+
+.card__img--wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.card__img {
+    object-position: center;
+    scale: 1.25;
+    width: 100%;
+}
+
+.card__text--wrapper {
+    width: 100%;
+    min-height: 100px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: none;
+    background-color: rgba(253, 204, 114, 0.506);
+    border-top: solid 2px rgb(252, 164, 1);
+}
+
+.card__title--wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.card__title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.card__tag--wrapper {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 2px;
+    margin: 1px;
+    border: 1px solid #2f2f2f;
+    border-radius: 10px;
+    background-color: #dedbdb99;
+}
+
+.card__tag {
+    color: #000;
+    font-size: 12px;
+    padding: 0 0.5px;
+    white-space: nowrap;
+}
+
+.card__button--wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.card__button {
+    width: 120px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.card__button--title {
+    padding-left: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+    font-size: 16px;
+    transition: all 300ms ease;
+}
+
+.card__button--title:hover {
+    color: orange;
+}
+
+.card__link--icon {
+    padding-left: 4px;
+}
+
+.error {
+    width: 100%;
+    background-color: rgba(254, 5, 5, 0.652);
+    margin-top: 16px;
+    padding: 4px;
+    font-size: 16px;
+    color: #fff;
+}

@@ -9,15 +9,15 @@
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <section class="landing__page">
+<body id="food__body">
+    <section class="food__browse">
         <nav>
             <div class="logo__wrapper">
                 <img src="/assets/Screenshot 2023-02-25 at 21.26.24.png" alt="null" class="logo">
             </div>                
             <ul class="nav__links">
-                <a href="food.html" class="nav__link link__hover-effect" onclick="getRandomRecipies()">
-                    <li>Food</li>
+                <a href="index.html" class="nav__link link__hover-effect">
+                    <li>Home</li>
                 </a>
                 <a href="" class="nav__link link__hover-effect">
                     <li>About Us</li>
@@ -29,21 +29,31 @@
         </nav>
         <header>
             <div class="header__container">
-                <h1 class="slogan">Use The Worlds Leading Recipe Bank For Your Next Meal</h1>
-                <h2 class="slogan-subtitle">Find That&nbsp;<span class="highlight">Recipe</span>&nbsp;You're Craving</h2>
+                <h1 class="food__header">Browse our recipies</h1>
                 <div class="search__wrapper">
                     <input type="text" class="landing__search-bar" placeholder="Find the Yum">
                     <button class="landing__search--button btn" onclick="getUserInput()"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
         </header>
+        <div class="overlay"></div>
     </section>
     <main>
-        <section class="">
-            <div class="landing__container">
-                <div class="row">
-                    <div class="img__wrapper">
-                        <img class="landing__img" src="assets/undraw_eating_together_re_ux62.svg" alt="">
+        <section class="food__results">
+            <div class="container">
+                <div class="row recipe__row">
+                    <div class="food__results--wrapper">
+                        <div class="title__wrapper">
+                            <h2 class="food__results--title">Search Results:</h2>
+                        </div>
+                        <div class="results__filter--wrapper">
+                            <button class="results__filter btn" onclick="recipeFilter()"><i class="fa-solid fa-filter"></i></button>
+                        </div>
+                    </div>
+                    <div id ="recipes">
+                        
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,7 +79,7 @@
                     </div>
                 </div>
             </div>
-        </footer> 
-    </main>
+        </footer>
+    </main> 
 </body>
 </html>
