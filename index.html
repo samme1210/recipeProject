@@ -31,10 +31,10 @@
             <div class="header__container">
                 <h1 class="slogan">Use The Worlds Leading Recipe Bank For Your Next Meal</h1>
                 <h2 class="slogan-subtitle">Find That&nbsp;<span class="highlight">Recipe</span>&nbsp;You're Craving</h2>
-                <div class="search__wrapper">
-                    <input type="text" class="landing__search-bar" placeholder="Find the Yum">
-                    <button class="landing__search--button btn" onclick="getUserInput()"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+                <form class="search__form" action="food.html">
+                    <input type="text" id="landing__input-field" placeholder="Find the Yum" name="userInput">
+                    <button class="landing__search--button btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
             </div>
         </header>
     </section>
