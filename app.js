@@ -38,46 +38,53 @@ function onloadRecipies() {
 }
 
 function recipeFilter() {
-    const cardThree = '#recipes div:nth-child(3)'
+    const cardThree = document.querySelector('#recipes div:nth-child(3)');
     console.log(cardThree)
-    const targetCardThree = document.querySelector(cardThree)
-    const filterModalActivate = targetCardThree.classList += ' .filter__modal'
-    return filterModalActivate
+    const filterModalActivate = cardThree.classList += ' .filter__modal'
 }
 
+/*
+this function is called by main and provides a html template for the variables to be inserted,
+allowing the data from spoonacular api to be customised using css
+*/
 
 function recipeHTML(recipe) {
     return `<div class="recipe__card--wrapper">
-    <div class="card__img--wrapper">
-        <img class="card__img" src="${recipe.image}" alt="Not Available"></img>
-    </div>
-    <div class="card__text--wrapper">
-        <div class="card__title--wrapper">
-            <h3 class="card__title">${recipe.title}</h3>
+        <div class="card__img--wrapper">
+            <img class="card__img" src="${recipe.image}" alt="Not Available"></img>
         </div>
-        <div class="card__tags">
-            <div class="card__tag--wrapper">
-                <h4 class="card__tag">${recipe.type}</h4>
+        <div class="card__text--wrapper">
+            <div class="card__title--wrapper">
+                <h3 class="card__title">${recipe.title}</h3>
             </div>
-            <div class="card__tag--wrapper">
-                <h4 class="card__tag">${recipe.dishTypes['breakfast', "lunch", 'dinner']}</h4>
+            <div class="card__tags">
+                <div class="card__tag--wrapper">
+                    <h4 class="card__tag">${recipe.type}</h4>
+                </div>
+                <div class="card__tag--wrapper">
+                    <h4 class="card__tag">${recipe.dishTypes['breakfast', "lunch", 'dinner']}</h4>
+                </div>
+                <div class="card__tag--wrapper">
+                    <h4 class="card__tag">${recipe.readyInMinutes}m</h4>
+                </div>
+                <div class="card__tag--wrapper">
+                    <h4 class="card__tag">Serves: ${recipe.servings}</h4>
+                </div>
             </div>
-            <div class="card__tag--wrapper">
-                <h4 class="card__tag">${recipe.readyInMinutes}m</h4>
-            </div>
-            <div class="card__tag--wrapper">
-                <h4 class="card__tag">Serves: ${recipe.servings}</h4>
+            <div class="card__button--wrapper">
+                <button class="card__button btn">
+                    <i class="fa-solid fa-link card__link--icon"></i>
+                    <h5 class="card__button--title">${recipe.sourceUrl}</h5>
+                </button>
             </div>
         </div>
-        <div class="card__button--wrapper">
-            <button class="card__button btn">
-                <i class="fa-solid fa-link card__link--icon"></i>
-                <h5 class="card__button--title">${recipe.sourceUrl}</h5>
-            </button>
-        </div>
-    </div>
     </div>`
 }
+
+function toggleMenu() {
+    document.body.classList.toggle('menu__open'); 
+}
+
 
 
 //function triggerLoadingState(event) {

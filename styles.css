@@ -16,6 +16,11 @@ body {
     overflow-x: hidden;
 }
 
+img { 
+    width: 100%;
+    height: 100%;
+}
+
 ul {
     display: flex;
     justify-content: space-around;
@@ -25,11 +30,11 @@ ul {
 li {
     text-decoration: none;
     list-style-type: none;
-    cursor: pointer;
 }
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 input {
@@ -149,6 +154,7 @@ nav {
     content: "";
     position: absolute;
     height: 3px; 
+    bottom: 6px;
     right: 0;
     width: 0%;
     background-color: orange;
@@ -172,6 +178,65 @@ nav {
     border: 2px solid orange;
     background-color: #fff;
     color: orange;
+}
+
+.btn__menu {
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: orange;
+    display: none;
+}
+
+.btn__menu--close {
+    position: absolute;
+    font-size: 40px;
+    right: 25px;
+    top: 25px;
+    color: white;
+}
+
+.menu__backdrop {
+    position: absolute;
+    background-color: rgb(253, 204, 114);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.menu__open {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.menu__open .menu__backdrop {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list {
+    padding: 32px;
+}
+
+.menu__link {
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
 }
 
 /*
@@ -271,36 +336,6 @@ footer {
 
 .food__results {
     min-height: 100vh;
-}
-
-.food__browse {
-    position: relative;
-}
-
-.overlay {
-    background-image: url(/assets/greek-food-background-traditional-different-greek-dishes-set-greek-food-background-traditional-different-greek-dishes-set-top-view-178761927.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    visibility: hidden;
-}
-
-.overlay:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(41,25,71,.83);
-    pointer-events: none;
 }
 
 /*
@@ -477,4 +512,29 @@ footer {
     padding: 4px;
     font-size: 16px;
     color: #fff;
+}
+
+@media (max-width: 768px) {
+    h1 {
+      font-size: 40px;
+    }
+  
+    h2 {
+      font-size: 26px;
+    }
+  
+    button {
+      font-size: 18px;
+    }
+}
+
+/* SMALL PHONES, LARGE SMARTPHONES */
+@media (max-width: 550px) {
+    .btn__menu {
+      display: block;
+    }
+
+    .nav__links {
+      display: none;
+    }
 }

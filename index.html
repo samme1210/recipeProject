@@ -16,16 +16,35 @@
                 <img src="/assets/Screenshot 2023-02-25 at 21.26.24.png" alt="null" class="logo">
             </div>                
             <ul class="nav__links">
-                <a href="food.html" class="nav__link link__hover-effect" onclick="getRandomRecipies()">
-                    <li>Food</li>
-                </a>
-                <a href="" class="nav__link link__hover-effect">
-                    <li>About Us</li>
-                </a>
-                <a href="" class="nav__link nav__link--last">
-                    <li>Contact</li>
-                </a>
+                <li>
+                    <a href="food.html" class="nav__link link__hover-effect">Recipes</a>
+                </li>
+                <li>
+                    <a href="" class="nav__link link__hover-effect">About Us</a>
+                </li>
+                <li>
+                    <a href="" class="nav__link nav__link--last">Contact</a>
+                </li>
             </ul>
+            <button class="btn__menu btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu__backdrop">
+                <button class="btn__menu btn btn__menu--close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="menu__links">
+                    <li class="menu__list">
+                        <a href="food.html" class="menu__link" onclick="toggleMenu()">Recipes</a>
+                    </li>
+                    <li class="menu__list">
+                        <a href="" class="menu__link" onclick="toggleMenu()">About Us</a>
+                    </li>
+                    <li class="menu__list">
+                        <a class="menu__link">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <header>
             <div class="header__container">
