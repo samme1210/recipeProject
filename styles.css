@@ -183,7 +183,7 @@ nav {
 .menu__toggle {
     display: none;
     position: relative;
-    background-color: #3d3d3d;
+    background-color: #feecbe;;
     width: 50px; 
     height: 50px; 
     border-radius: 50%;
@@ -197,8 +197,12 @@ nav {
     width: 30px; 
     height: 2px;
     border-radius: 4px;
-    background-color: orange;
+    background-color: #000;
 }
+
+.menu__icon, .menu__icon::after {
+    transition: all 300ms linear;
+} 
 
 .menu__icon {
     top: calc(50% - 1px);
@@ -220,29 +224,19 @@ nav {
 }
 
 .toggled .menu__icon {
-    width: 30px; 
-    height: 2px;
     left: 10px;
     top: calc(50% - 2px);
     transform: rotate(-45deg);
-    background-color: red;
-  }
+}
 
   .toggled .menu__icon::after {
-    width: 30px; 
-    height: 2px;
-    top: 1px;
-    transform: rotate(-270deg);
-    background-color: red;
-  }
+      top: 0px;
+    transform: rotate(90deg);
+}
 
 .toggled .menu__icon::before  {
     transform: scale(0);
-}
-
-.menu__icon, .menu__icon::after {
-    transition: all 0.3s linear;
-  }  
+} 
 
 /*
     LANDING-PAGE
