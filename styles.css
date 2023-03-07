@@ -180,6 +180,10 @@ nav {
     color: orange;
 }
 
+/*
+    Phone Nav
+*/
+
 .menu__toggle {
     display: none;
     position: relative;
@@ -188,6 +192,11 @@ nav {
     height: 50px; 
     border-radius: 50%;
     border: none;
+    z-index: 900;
+}
+
+.toggled .menu__toggle {
+    display: block;
 }
 
 .menu__icon,
@@ -237,6 +246,58 @@ nav {
 .toggled .menu__icon::before  {
     transform: scale(0);
 } 
+
+.menu__backdrop {
+    position: absolute;
+    background-color: #242424;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(1000px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+body.toggled {
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.toggled .menu__backdrop {
+    visibility: visible;
+    opacity: 1;
+    animation: slideIn 700ms ease-out;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list {
+    padding: 32px;
+}
+
+.menu__link {
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+}
 
 /*
     LANDING-PAGE
