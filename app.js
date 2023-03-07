@@ -82,8 +82,12 @@ function recipeHTML(recipe) {
 }
 
 function toggleMenu() {
-    document.body.classList.toggle('menu__open'); 
+    const targetMenuClose = document.querySelector('.menu__toggle')
+    targetMenuClose.classList.toggle("toggled");
 }
+
+//const button = document.querySelector(".menu__toggle");
+//button.addEventListener( "click", () => button.classList.toggle("toggled") );
 
 
 

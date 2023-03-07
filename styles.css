@@ -180,64 +180,69 @@ nav {
     color: orange;
 }
 
-.btn__menu {
-    background-color: transparent;
-    font-size: 40px;
-    text-align: center;
-    border: none;
-    color: orange;
+.menu__toggle {
     display: none;
+    position: relative;
+    background-color: #3d3d3d;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    border: none;
 }
 
-.btn__menu--close {
+.menu__icon,
+.menu__icon::before,
+.menu__icon::after {
     position: absolute;
-    font-size: 40px;
-    right: 25px;
-    top: 25px;
-    color: white;
+    width: 30px; 
+    height: 2px;
+    border-radius: 4px;
+    background-color: orange;
 }
 
-.menu__backdrop {
-    position: absolute;
-    background-color: rgb(253, 204, 114);
-    top: 0;
-    bottom: 0;
+.menu__icon {
+    top: calc(50% - 1px);
+    left: calc(50% - 15px);
+}
+
+.menu__icon::before,
+.menu__icon::after {
+    content: "";
     left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 300ms ease;
-    visibility: hidden;
-    opacity: 0;
 }
 
-.menu__open {
-    height: 100vh;
-    overflow-y: hidden;
+.menu__icon::before {
+    bottom: 8px;
 }
 
-.menu__open .menu__backdrop {
-    visibility: visible;
-    opacity: 1;
+.menu__icon::after {
+    top: 8px;
 }
 
-.menu__links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.toggled .menu__icon {
+    width: 30px; 
+    height: 2px;
+    left: 10px;
+    top: calc(50% - 2px);
+    transform: rotate(-45deg);
+    background-color: red;
+  }
+
+  .toggled .menu__icon::after {
+    width: 30px; 
+    height: 2px;
+    top: 1px;
+    transform: rotate(-270deg);
+    background-color: red;
+  }
+
+.toggled .menu__icon::before  {
+    transform: scale(0);
 }
 
-.menu__list {
-    padding: 32px;
-}
-
-.menu__link {
-    color: #fff;
-    font-size: 40px;
-    text-decoration: none;
-}
+.menu__icon, .menu__icon::after {
+    transition: all 0.3s linear;
+  }  
 
 /*
     LANDING-PAGE
@@ -530,7 +535,7 @@ footer {
 
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
-    .btn__menu {
+    .menu__toggle {
       display: block;
     }
 
