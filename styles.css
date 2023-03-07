@@ -263,15 +263,6 @@ nav {
     opacity: 0;
 }
 
-@keyframes slideIn {
-    0% {
-        transform: translateX(1000px);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
 body.toggled {
     max-height: 100vh;
     overflow-y: hidden;
@@ -280,7 +271,46 @@ body.toggled {
 .toggled .menu__backdrop {
     visibility: visible;
     opacity: 1;
+}
+
+.slideInFromRightAnime {
     animation: slideIn 700ms ease-out;
+}
+
+.slideOutFromLeftAnime {
+    animation: slideOut 1000ms ease-in;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    50% {
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    50% {
+        visibility: visible;
+    }
+
+    100% {
+        transform: translateX(1000px);
+    }
 }
 
 .menu__links {
