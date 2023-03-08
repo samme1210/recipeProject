@@ -251,15 +251,15 @@ nav {
     position: absolute;
     background-color: #242424;
     top: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
     right: 0;
     z-index: 100;
     display: flex;
+    transform: translateX(100%);
     align-items: center;
     justify-content: center;
-    transition: all 300ms ease;
-    visibility: hidden;
+    transition: all 400ms ease-in;
     opacity: 0;
 }
 
@@ -269,48 +269,9 @@ body.toggled {
 }
 
 .toggled .menu__backdrop {
-    visibility: visible;
     opacity: 1;
-}
-
-.slideInFromRightAnime {
-    animation: slideIn 700ms ease-out;
-}
-
-.slideOutFromLeftAnime {
-    animation: slideOut 1000ms ease-in;
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(1000px);
-        opacity: 0;
-    }
-
-    50% {
-        visibility: visible;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-@keyframes slideOut {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    50% {
-        visibility: visible;
-    }
-
-    100% {
-        transform: translateX(1000px);
-    }
+    transform: translateX(0);
+    transition: all 400ms ease-in;
 }
 
 .menu__links {

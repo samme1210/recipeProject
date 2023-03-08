@@ -82,23 +82,12 @@ function recipeHTML(recipe) {
 }
 
 function toggleMenu() {
+
     const targetMenuBTN = document.querySelector('.menu__toggle');
     const targetMenuBG = document.querySelector('.menu__backdrop');
     targetMenuBTN.classList.toggle("toggled");
-    targetMenuBG.classList.toggle("toggled")
-    document.body.classList.toggle("toggled")
-
-    targetMenuBTN.addEventListener('click', function toggleAnimation() {
-        if (targetMenuBG.classList.contains('.slideInFromRightAnime')) {
-            targetMenuBG.classList.remove('.slideInFromRightAnime');
-            targetMenuBG.classList.add('.slideOutFromLeftAnime');
-        } else if (targetMenuBG.classList.contains('.slideOutFromLeftAnime')) {
-            targetMenuBG.classList.remove('.slideOutFromLeftAnime');
-            targetMenuBG.classList.add('.slideInFromRightAnime');
-        } else {
-            targetMenuBG.classList.add('.slideInFromRightAnime');
-        }
-    })
+    document.body.classList.toggle("toggled");
+    targetMenuBG.classList.toggle("toggled");
 }
 
 //function triggerLoadingState(event) {
