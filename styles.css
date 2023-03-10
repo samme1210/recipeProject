@@ -433,6 +433,7 @@ footer {
 
 #recipes {
     width: 100%;
+    margin: 25px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -444,12 +445,10 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin: 2%;
+    margin: 25px 1%;
     overflow: hidden;
     width: 30%;
-    max-width: 188px;
-    min-height: 150px;
-    max-height: 250px;
+    width: 188px;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.15);
     transition: all 300ms ease;
@@ -462,7 +461,7 @@ footer {
 .card__img--wrapper {
     width: 100%;
     overflow: hidden;
-    display: flex;
+    height: 100px;
 }
 
 .card__img {
@@ -473,11 +472,11 @@ footer {
 
 .card__text--wrapper {
     width: 100%;
-    min-height: 100px;
+    height: 150px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top: none;
-    background-color: rgba(253, 204, 114, 0.506);
+    background-color: #feecbe;
     border-top: solid 2px rgb(252, 164, 1);
 }
 
@@ -486,11 +485,14 @@ footer {
     display: flex;
     justify-content: center;
     margin-top: 8px;
+    height: 40px;
 }
 
 .card__title {
     font-size: 16px;
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card__tags {
@@ -519,15 +521,15 @@ footer {
     white-space: nowrap;
 }
 
-.card__button--wrapper {
+.card__link--wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 12px 0;
+    margin-top: 24px;
 }
 
-.card__button {
-    width: 120px;
+.card__link {
+    width: 85%;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -535,9 +537,15 @@ footer {
     border-radius: 20px;
     color: #fff;
     font-size: 16px;
+    padding: 1px;
 }
 
-.card__button--title {
+.card__link:hover,
+.card__link:hover .card__link--title  {
+    color: orange;
+}
+
+.card__link--title {
     padding-left: 4px;
     overflow: hidden;
     white-space: nowrap;
@@ -545,10 +553,6 @@ footer {
     color: #fff;
     font-size: 16px;
     transition: all 300ms ease;
-}
-
-.card__button--title:hover {
-    color: orange;
 }
 
 .card__link--icon {
@@ -567,11 +571,11 @@ footer {
 @media (max-width: 768px) {
   
     h1 {
-        font-size: 36px;
+        font-size: 40px;
       }
 
     h2 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     input {
@@ -580,12 +584,12 @@ footer {
 
     #landing__input-field,
     #food__input-field {
-    font-size: 18px;
-}
+        font-size: 18px;
+    }
 
-.landing__search--button {
-    font-size: 18px;
-}
+    .landing__search--button {
+        font-size: 18px;
+    }
 }
 
 /* SMALL PHONES, LARGE SMARTPHONES */
@@ -598,13 +602,4 @@ footer {
     .nav__links {
       display: none;
     }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-    font-size: 20px;
-    }
-
 }

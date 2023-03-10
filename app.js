@@ -71,11 +71,11 @@ function recipeHTML(recipe) {
                     <h4 class="card__tag">Serves: ${recipe.servings}</h4>
                 </div>
             </div>
-            <div class="card__button--wrapper">
-                <button class="card__button btn">
+            <div class="card__link--wrapper">
+                <a class="card__link">
                     <i class="fa-solid fa-link card__link--icon"></i>
-                    <h5 class="card__button--title">${recipe.sourceUrl}</h5>
-                </button>
+                    <h5 class="card__link--title">${recipe.sourceUrl}</h5>
+                </a>
             </div>
         </div>
     </div>`
