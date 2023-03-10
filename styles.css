@@ -296,7 +296,7 @@ body.toggled {
 
 .header__container {
     max-width: 720px;
-    margin: 0, auto;
+    margin: 0 auto;
     padding-top: 32px;
     display: flex;
     flex-direction: column;
@@ -306,12 +306,12 @@ body.toggled {
 .search__form {
     border: #000 solid 2px;
     border-radius: 40px;
+    width: 50%;
     max-width: 500px;
-    min-width: 300px;
+    min-width: 200px;
     display: flex;
     justify-content: space-between;
     position: relative;
-    width: 50%;
     margin-bottom: 16px;
     padding: 5px;
 }
@@ -571,8 +571,21 @@ footer {
       }
 
     h2 {
-    font-size: 24px;
+        font-size: 24px;
     }
+
+    input {
+        font-size: 18px;
+    }
+
+    #landing__input-field,
+    #food__input-field {
+    font-size: 18px;
+}
+
+.landing__search--button {
+    font-size: 18px;
+}
 }
 
 /* SMALL PHONES, LARGE SMARTPHONES */
@@ -593,4 +606,5 @@ footer {
     h2 {
     font-size: 20px;
     }
+
 }
