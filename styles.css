@@ -113,6 +113,15 @@ h4 {
     color: orange;
 }
 
+.error {
+    width: 100%;
+    background-color: rgba(254, 5, 5, 0.652);
+    margin-top: 16px;
+    padding: 4px;
+    font-size: 16px;
+    color: #fff;
+}
+
 /*
     NAV
 */
@@ -329,7 +338,7 @@ body.toggled {
     width: 20%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     font-size: 24px;
     padding-right: 5px;
 }
@@ -385,13 +394,33 @@ footer {
 */
 
 .food__buffer-bar {
-    height: 5px;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
+    height: 5px;
+    background-color: #000;
     transform: translateZ(0) scaleY(1);
     transform-origin: center center;
     transition: opacity .3s cubic-bezier(.4,0,.2,1),transform .4s cubic-bezier(.4,0,.2,1);
     will-change: opacity,transform;
+}
+
+.buffer__loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: orange;
+}
+
+.buffer__loader::after {
+    content: "";
+    width: 100%;
+    background: #fff;
+}
+
+.food__buffer-bar:hover .buffer__loader {
+    width: 100%;
 }
 /*
     FOOD BROWSE RESULTS
@@ -456,9 +485,8 @@ footer {
     justify-content: space-around;
     margin: 25px 1%;
     overflow: hidden;
-    width: 30%;
-    width: 188px;
-    border-radius: 20px;
+    width: 200px;
+    border-radius: 5px;
     box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.15);
     transition: all 300ms ease;
 }
@@ -469,8 +497,8 @@ footer {
 
 .card__img--wrapper {
     width: 100%;
-    overflow: hidden;
     height: 100px;
+    overflow: hidden;
 }
 
 .card__img {
@@ -481,11 +509,10 @@ footer {
 
 .card__text--wrapper {
     width: 100%;
-    height: 160px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top: none;
-    background-color: #feecbe;
+    height: 170px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(254,236,190,1) 100%);
     border-top: solid 2px rgb(252, 164, 1);
 }
 
@@ -495,7 +522,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 8px;
+    margin: 10px 0px;
 }
 
 .card__title {
@@ -503,7 +530,7 @@ footer {
     font-weight: 600;
     text-align: center;
     overflow: hidden;
-    padding: 0 8px;
+    padding: 0 2px;
 }
 
 .card__tags {
@@ -511,13 +538,14 @@ footer {
     flex-wrap: wrap;
     justify-content: left;
     width: 100%;
-    margin-top: 2px;
+    height: 40px;
 }
 
 .card__tag--wrapper {
     display: flex;
     align-items: center;
     width: fit-content;
+    height: fit-content;
     padding: 2px;
     margin: 1px;
     border: 1px solid #2f2f2f;
@@ -544,11 +572,15 @@ footer {
     display: flex;
     justify-content: left;
     align-items: center;
-    border: 2px solid #fff;
+    border: 1.5px solid #000;
     border-radius: 20px;
-    color: #fff;
+    color: #000;
     font-size: 16px;
     padding: 1px;
+    transition: all 300ms ease;
+}
+.card__link:hover {
+    border: orange solid 1.5px;
 }
 
 .card__link:hover,
@@ -561,22 +593,14 @@ footer {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #fff;
-    font-size: 16px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
     transition: all 300ms ease;
 }
 
 .card__link--icon {
     padding-left: 4px;
-}
-
-.error {
-    width: 100%;
-    background-color: rgba(254, 5, 5, 0.652);
-    margin-top: 16px;
-    padding: 4px;
-    font-size: 16px;
-    color: #fff;
 }
 
 @media (max-width: 768px) {

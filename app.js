@@ -59,10 +59,10 @@ function recipeHTML(recipe) {
             </div>
             <div class="card__tags">
                 <div class="card__tag--wrapper">
-                    <h4 class="card__tag">${recipe.type}</h4>
+                    <h4 class="card__tag">${recipe.cuisines[0]}</h4>
                 </div>
                 <div class="card__tag--wrapper">
-                    <h4 class="card__tag">${recipe.dishTypes['breakfast', "lunch", 'dinner']}</h4>
+                    <h4 class="card__tag">${recipe.dishTypes[0]}</h4>
                 </div>
                 <div class="card__tag--wrapper">
                     <h4 class="card__tag">${recipe.readyInMinutes}m</h4>
@@ -72,7 +72,7 @@ function recipeHTML(recipe) {
                 </div>
             </div>
             <div class="card__link--wrapper">
-                <a class="card__link">
+                <a class="card__link" href="${recipe.spoonacularSourceUrl}">
                     <i class="fa-solid fa-link card__link--icon"></i>
                     <h5 class="card__link--title">${recipe.sourceUrl}</h5>
                 </a>
