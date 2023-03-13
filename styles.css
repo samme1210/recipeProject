@@ -278,7 +278,7 @@ body.toggled {
 }
 
 .toggled .menu__backdrop {
-    opacity: 1;
+    opacity: 0.9;
     transform: translateX(0);
     transition: all 400ms ease-in;
 }
@@ -393,35 +393,75 @@ footer {
     FOOD BROWSE
 */
 
-.food__buffer-bar {
-    position: relative;
-    overflow: hidden;
-    height: 5px;
-    background-color: #000;
-    transform: translateZ(0) scaleY(1);
-    transform-origin: center center;
-    transition: opacity .3s cubic-bezier(.4,0,.2,1),transform .4s cubic-bezier(.4,0,.2,1);
-    will-change: opacity,transform;
+.food__container {
+    padding-top: 30px;
+}
+
+.buffer__wrapper {
+    width: 100%;
+    height: 8px;
+    background: #feecbe;
+    margin-bottom: 50px;
+}
+
+.loading .buffer__loader{
+    display: block;
 }
 
 .buffer__loader {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0%;
-    height: 100%;
-    background: orange;
+    display: none;
+    position: relative;
+    width: calc(100%/2);
+    height: 8px;
+    z-index: 10;
+    border-radius: 10%;
+    animation: moveLoader 4000ms ease-in-out infinite; 
+}
+
+@keyframes moveLoader {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 .buffer__loader::after {
-    content: "";
-    width: 100%;
-    background: #fff;
+    content: '';
+    position: absolute;
+    display: block;
+    width: 25%;
+    height: 8px;
+    z-index: 15;
+    background: orange;
+    border-radius: 10%;
+    animation: loader 4000ms linear infinite; 
 }
 
-.food__buffer-bar:hover .buffer__loader {
-    width: 100%;
+@keyframes loader {
+    0% {
+        transform: scaleX(1);
+        left: -25%;
+    }
+    25% {
+        transform: scaleX(4);
+    }
+    50% {
+        transform: scaleX(1);
+        left: 150%;
+    }
+    75% {
+        transform: scaleX(4);
+    }
+    100%{
+        transform: scaleX(1);
+        left: -125%;
+    }
 }
+
+
+
 /*
     FOOD BROWSE RESULTS
 */
@@ -627,8 +667,16 @@ footer {
     }
 }
 
-/* SMALL PHONES, LARGE SMARTPHONES */
+/* SMALL PHONES, LARGE SMARTPHONES*/
 @media (max-width: 550px) {
+
+    .slogan {
+        font-size: 32px;
+      }
+    
+    .slogan-subtitle {
+        font-size: 22px;
+    }
 
     .menu__toggle {
       display: block;

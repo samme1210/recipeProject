@@ -1,7 +1,7 @@
 const recipeResults = document.querySelector('#recipes');
 const apiKey = "apiKey=f0be80267acc4b1da34a6b913d0918a8";
 const queryURL = "https://api.spoonacular.com/recipes/";
-window.onload = onloadRecipies();
+window.onload = triggerLoading();
 
 /*
 main function fetches requested data from spoonacular api transforms the promise into readable data, 
@@ -82,7 +82,6 @@ function recipeHTML(recipe) {
 }
 
 function toggleMenu() {
-
     const targetMenuBTN = document.querySelector('.menu__toggle');
     const targetMenuBG = document.querySelector('.menu__backdrop');
     targetMenuBTN.classList.toggle("toggled");
@@ -90,8 +89,11 @@ function toggleMenu() {
     targetMenuBG.classList.toggle("toggled");
 }
 
-//function triggerLoadingState(event) {
-//    const 
-//}
-//
-//onclick="location.href='${recipe.sourceUrl}'
+
+
+function triggerLoading() {
+    const bufferBar = document.querySelector('.buffer__wrapper');
+    bufferBar.classList.add('loading')
+    setTimeout (onloadRecipies(), "5000")
+}
+
