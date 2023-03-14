@@ -72,7 +72,7 @@ function recipeHTML(recipe) {
                 </div>
             </div>
             <div class="card__link--wrapper">
-                <a class="card__link" href="${recipe.spoonacularSourceUrl}">
+                <a class="card__link" target="_blank" href="${recipe.spoonacularSourceUrl}">
                     <i class="fa-solid fa-link card__link--icon"></i>
                     <h5 class="card__link--title">${recipe.sourceUrl}</h5>
                 </a>
@@ -94,6 +94,6 @@ function toggleMenu() {
 function triggerLoading() {
     const bufferBar = document.querySelector('.buffer__wrapper');
     bufferBar.classList.add('loading')
-    setTimeout (onloadRecipies(), "5000")
+    setTimeout (onloadRecipies(), '10000')
 }
 
