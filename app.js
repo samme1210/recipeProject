@@ -1,7 +1,10 @@
 const recipeResults = document.querySelector('#recipes');
 const apiKey = "apiKey=f0be80267acc4b1da34a6b913d0918a8";
 const queryURL = "https://api.spoonacular.com/recipes/";
+
 const bufferBar = document.querySelector('.buffer__wrapper');
+const getImgWrapper = document.querySelector('.img__wrapper');
+
 window.onload = triggerLoading();
 
 /*
@@ -19,22 +22,22 @@ async function main(input) {
     removeLoading();
 }
 
-/*
-on load of food.html function will load recipes based on the user input from either index.html or food.html, 
-otherwise load random rercipes in the event of no user input from index.html
-*/
-
 function triggerLoading() {
 
     if (window.document.title == 'SUMYUM-RECIPES') {
-    bufferBar.classList.add('loading')
-    setTimeout (onloadRecipies,4000)
+        bufferBar.classList.add('loading')
+        setTimeout (onloadRecipies,4000)
     }
 }
 
 function removeLoading() {
     bufferBar.classList.remove('loading')
 }
+
+/*
+on load of food.html function will load recipes based on the user input from either index.html or food.html, 
+otherwise load random rercipes in the event of no user input from index.html
+*/
 
 function onloadRecipies() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -101,5 +104,12 @@ function toggleMenu() {
     targetMenuBTN.classList.toggle("toggled");
     document.body.classList.toggle("toggled");
     targetMenuBG.classList.toggle("toggled");
+}
+
+function goToRecipes() {
+    getImgWrapper.classList.add('loading');
+
+    setTimeout(() => {
+    },3000);
 }
 

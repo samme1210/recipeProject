@@ -247,7 +247,7 @@ nav {
     transform: rotate(-45deg);
 }
 
-  .toggled .menu__icon::after {
+.toggled .menu__icon::after {
       top: 0px;
     transform: rotate(90deg);
 }
@@ -375,6 +375,7 @@ body.toggled {
     left: 35.7%;
     width: 2.5%;
     height: 2%;
+    animation: none;
 }
 
 .light-middle {
@@ -391,7 +392,7 @@ body.toggled {
     height: 2%;
 }
 
-.loading .light-left {
+.loading  .light-left {
     animation: flashingLights 2000ms ease 400ms infinite;
 }
 .loading .light-middle {
