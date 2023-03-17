@@ -2,11 +2,10 @@ const recipeResults = document.querySelector('#recipes');
 const apiKey = "apiKey=f0be80267acc4b1da34a6b913d0918a8";
 const queryURL = "https://api.spoonacular.com/recipes/";
 
-const bufferBar = document.querySelector('.buffer__wrapper');
-const getImgWrapper = document.querySelector('.img__wrapper');
-const getButtonWrapper = document.querySelector('.search__button');
+window.onload = onloadRecipies();
 
-window.onload = triggerLoading();
+const loadingElements = document.querySelectorAll(".img__wrapper, .search__button");
+const allLoadingElements = document.querySelectorAll("#recipes, .buffer__wrapper, .search__button, .img__wrapper");
 
 /*
 main function fetches requested data from spoonacular api transforms the promise into readable data, 
@@ -14,35 +13,31 @@ the uses this data to amend the html accordingly
 */
 
 async function main(input) {
-    console.log(input)
+        console.log(input)
     const recipies = await fetch(queryURL + input + "&number=6&addRecipeInformation=true");
     const recipeData = await recipies.json();
-    console.log(recipies)
-    console.log(recipeData)
+        console.log(recipies)
+        console.log(recipeData)
     recipeResults.innerHTML = (recipeData.results || recipeData.recipes).map((recipe) => recipeHTML(recipe)).join("");
     removeLoading();
 }
 
 function triggerLoading() {
-
-    if (window.document.title == 'SUMYUM-RECIPES') {
-        bufferBar.classList.add('loading')
-        getButtonWrapper.classList.add('loading')
-        setTimeout (onloadRecipies,4000)
+    if (window.document.title == "SUMYUM-RECIPES") {
+        const recipeElems = document.querySelectorAll("#recipes, .buffer__wrapper, .search__button")
+        recipeElems.forEach((element) => element.classList.add("loading"));
     }
 }
 
 function searchEvent() {
-    getImgWrapper.classList.add('loading');
-    getButtonWrapper.classList.add('loading')
+    loadingElements.forEach((element) => element.classList.add("loading"));
     setTimeout(() => {
         window.location = 'food.html'
-    },4000);
+    },2500);
 }
 
 function removeLoading() {
-    bufferBar.classList.remove('loading')
-    getButtonWrapper.classList.remove('loading')
+  allLoadingElements.forEach((element) => element.classList.remove("loading"));
 }
 
 /*
@@ -51,6 +46,8 @@ otherwise load random rercipes in the event of no user input from index.html
 */
 
 function onloadRecipies() {
+    triggerLoading();
+
     const urlParams = new URLSearchParams(window.location.search);
     const userInput = urlParams.get("userInput"); 
     let searchType;
@@ -104,9 +101,5 @@ function recipeHTML(recipe) {
 }
 
 function toggleMenu() {
-    const targetMenuBTN = document.querySelector('.menu__toggle');
-    const targetMenuBG = document.querySelector('.menu__backdrop');
-    targetMenuBTN.classList.toggle("toggled");
     document.body.classList.toggle("toggled");
-    targetMenuBG.classList.toggle("toggled");
 }
