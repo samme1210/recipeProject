@@ -106,7 +106,7 @@ h4 {
 }
 
 .btn:active {
-    transform: scale(0.90);
+    transform: scale(0.80);
 }
 
 .btn:hover {
@@ -299,6 +299,11 @@ body.toggled {
     text-decoration: none;
 }
 
+.menu__link:hover {
+    color: orange;
+    transition: all 400ms ease;
+}
+
 /*
     LANDING-PAGE
 */
@@ -334,16 +339,16 @@ body.toggled {
     padding-left: 5px;
 }
 
-.landing__search--button {
+.search__btn--wrapper {
     width: 20%;
     display: flex;
     align-items: center;
     justify-content: right;
-    font-size: 24px;
     padding-right: 5px;
 }
 
-.search {
+.search__button {
+    font-size: 24px;
     position: relative;
 }
 
@@ -354,8 +359,10 @@ body.toggled {
 .load-spinner {
     display: none;
     position: absolute;
+    top: -12px;
+    left: -24px;
     color: orange;
-    font-size: 22px;
+    font-size: 24px;
     animation: spin 1000ms linear infinite;
 }
 
@@ -385,6 +392,7 @@ body.toggled {
     display: flex;
     justify-content: center;
     position: relative;
+    margin-left: 2%;
 }
 
 .landing__img {
@@ -495,7 +503,8 @@ footer {
 .buffer__loader {
     display: none;
     position: relative;
-    width: calc(100%/2);
+    width: 50%;
+    border: #000  2px;
     height: 8px;
     z-index: 10;
     border-radius: 10%;
@@ -504,10 +513,10 @@ footer {
 
 @keyframes moveLoader {
     0% {
-        transform: translateX(0%);
+        transform: translateX(-50%);
     }
     100% {
-        transform: translateX(100%);
+        transform: translateX(150%);
     }
 }
 
@@ -517,6 +526,7 @@ footer {
     display: block;
     width: 25%;
     height: 8px;
+    left: 37%;
     z-index: 15;
     background: orange;
     border-radius: 10%;
@@ -525,22 +535,19 @@ footer {
 
 @keyframes loader {
     0% {
-        transform: scaleX(1);
-        left: -25%;
+        transform: scaleX(0);
     }
     25% {
-        transform: scaleX(4);
+        transform: scaleX(2);
     }
     50% {
         transform: scaleX(1);
-        left: 150%;
     }
     75% {
-        transform: scaleX(4);
+        transform: scaleX(2);
     }
     100%{
-        transform: scaleX(1);
-        left: -125%;
+        transform: scaleX(0);
     }
 }
 
@@ -746,8 +753,14 @@ footer {
         font-size: 18px;
     }
 
-    .landing__search--button {
+    .search__button,
+    .load-spinner {
         font-size: 18px;
+    }
+
+    .load-spinner {
+        top: -9px;
+        left: -18px;
     }
 }
 

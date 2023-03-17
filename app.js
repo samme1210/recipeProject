@@ -4,7 +4,7 @@ const queryURL = "https://api.spoonacular.com/recipes/";
 
 const bufferBar = document.querySelector('.buffer__wrapper');
 const getImgWrapper = document.querySelector('.img__wrapper');
-const getButtonWrapper = document.querySelector('.landing__search--button');
+const getButtonWrapper = document.querySelector('.search__button');
 
 window.onload = triggerLoading();
 
