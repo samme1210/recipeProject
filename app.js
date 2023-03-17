@@ -27,12 +27,22 @@ function triggerLoading() {
 
     if (window.document.title == 'SUMYUM-RECIPES') {
         bufferBar.classList.add('loading')
+        getButtonWrapper.classList.add('loading')
         setTimeout (onloadRecipies,4000)
     }
 }
 
+function searchEvent() {
+    getImgWrapper.classList.add('loading');
+    getButtonWrapper.classList.add('loading')
+    setTimeout(() => {
+        window.location = 'food.html'
+    },4000);
+}
+
 function removeLoading() {
     bufferBar.classList.remove('loading')
+    getButtonWrapper.classList.remove('loading')
 }
 
 /*
@@ -53,12 +63,6 @@ function onloadRecipies() {
 
     const input = searchType + apiKey + (userInput ? `&query=${userInput}` : '');
     main(input);
-}
-
-function recipeFilter() {
-    const cardThree = document.querySelector('#recipes div:nth-child(3)');
-    console.log(cardThree)
-    const filterModalActivate = cardThree.classList += ' .filter__modal';
 }
 
 /*
@@ -106,13 +110,3 @@ function toggleMenu() {
     document.body.classList.toggle("toggled");
     targetMenuBG.classList.toggle("toggled");
 }
-
-function goToRecipes() {
-    getImgWrapper.classList.add('loading');
-    getButtonWrapper.classList.add('loading');
-
-    setTimeout(() => {
-        window.location = 'food.html'
-    },5000);
-}
-

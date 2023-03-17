@@ -355,6 +355,7 @@ body.toggled {
     display: none;
     position: absolute;
     color: orange;
+    font-size: 22px;
     animation: spin 1000ms linear infinite;
 }
 
@@ -695,9 +696,9 @@ footer {
     display: flex;
     justify-content: left;
     align-items: center;
-    border: 1.5px solid #000;
+    border: 1.5px solid #fbcd59;
     border-radius: 20px;
-    color: #000;
+    color: #fbcd59;
     font-size: 16px;
     padding: 1px;
     transition: all 300ms ease;
@@ -716,7 +717,7 @@ footer {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #000;
+    color: #fbcd59;
     font-size: 14px;
     font-weight: 600;
     transition: all 300ms ease;

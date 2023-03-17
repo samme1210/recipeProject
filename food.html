@@ -48,7 +48,10 @@
                 <h1 class="food__header">Browse Our Recipies</h1>
                 <form class="search__form">
                     <input type="text" id="food__input-field" placeholder="Find the Yum" name="userInput">
-                    <button class="landing__search--button btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="landing__search--button btn" type="submit">
+                        <i class="search fa-solid fa-magnifying-glass"></i>
+                        <i class="load-spinner fa-solid fa-spinner"></i>
+                    </button>
                 </form>
             </div>
         </header>
@@ -65,7 +68,7 @@
                             <h2 class="food__results--title">Search Results:</h2>
                         </div>
                         <div class="results__filter--wrapper">
-                            <button class="results__filter btn" onclick="recipeFilter()"><i class="fa-solid fa-filter"></i></button>
+                            <button class="results__filter btn" onclick=""><i class="fa-solid fa-filter"></i></button>
                         </div>
                     </div>
                     <div id ="recipes"></div>
