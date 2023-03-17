@@ -4,6 +4,7 @@ const queryURL = "https://api.spoonacular.com/recipes/";
 
 const bufferBar = document.querySelector('.buffer__wrapper');
 const getImgWrapper = document.querySelector('.img__wrapper');
+const getButtonWrapper = document.querySelector('.landing__search--button');
 
 window.onload = triggerLoading();
 
@@ -108,8 +109,10 @@ function toggleMenu() {
 
 function goToRecipes() {
     getImgWrapper.classList.add('loading');
+    getButtonWrapper.classList.add('loading');
 
     setTimeout(() => {
-    },3000);
+        window.location = 'food.html'
+    },5000);
 }
 

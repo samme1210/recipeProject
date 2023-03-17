@@ -343,6 +343,35 @@ body.toggled {
     padding-right: 5px;
 }
 
+.search {
+    position: relative;
+}
+
+.loading .search {
+    display: none;
+}
+
+.load-spinner {
+    display: none;
+    position: absolute;
+    color: orange;
+    animation: spin 1000ms linear infinite;
+}
+
+.loading .load-spinner {
+    display: block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /*
     MAIN
 */
@@ -393,13 +422,13 @@ body.toggled {
 }
 
 .loading  .light-left {
-    animation: flashingLights 2000ms ease 400ms infinite;
+    animation: flashingLights 1500ms ease 0ms infinite;
 }
 .loading .light-middle {
-    animation: flashingLights 2000ms  ease 800ms infinite;
+    animation: flashingLights 1500ms  ease 400ms infinite;
 }
 .loading .light-right {
-    animation: flashingLights 2000ms ease 1200ms infinite;
+    animation: flashingLights 1500ms ease 800ms infinite;
 }
 
 
