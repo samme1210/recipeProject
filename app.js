@@ -70,7 +70,7 @@ allowing the data from spoonacular api to be customised using css
 function recipeHTML(recipe) {
     return `<div class="recipe__card--wrapper">
         <div class="card__img--wrapper">
-            <img class="card__img skeleton" src="${recipe.image}" alt="Not Available"></img>
+            <img class="card__imgs" src="${recipe.image}" alt="Not Available"></img>
         </div>
         <div class="card__text--wrapper">
             <div class="card__title--wrapper">
