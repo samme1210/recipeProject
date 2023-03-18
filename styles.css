@@ -608,6 +608,21 @@ footer {
     SKELETON STATE
 */
 
+.skeleton {
+    background-color: #f0f0f0;
+    animation: skeleton 1000ms linear infinite;
+}
+
+@keyframes skeleton {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+    
+}
+
 .loading__overlay {
     display: none;
     flex-direction: column;
