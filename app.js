@@ -77,11 +77,11 @@ function recipeHTML(recipe) {
                 <h3 class="card__title">${recipe.title}</h3>
             </div>
             <div class="card__tags">
-                <div class="card__tag--wrapper">
-                    <h4 class="card__tag">${recipe.cuisines[0]}</h4>
+                <div id="cuisines" class="card__tag--wrapper">
+                    <h4 class="card__tag">${refine(recipe.cuisines[0])}</h4>
                 </div>
-                <div class="card__tag--wrapper">
-                    <h4 class="card__tag">${recipe.dishTypes[0]}</h4>
+                <div id="dishTypes" class="card__tag--wrapper">
+                    <h4 class="card__tag">${refine(recipe.dishTypes[0])}</h4>
                 </div>
                 <div class="card__tag--wrapper">
                     <h4 class="card__tag">${recipe.readyInMinutes}m</h4>
@@ -98,6 +98,16 @@ function recipeHTML(recipe) {
             </div>
         </div>
     </div>`
+}
+
+function refine(input) {
+    console.log(input)
+    if (input !== undefined) {
+        return input;
+    } else {
+        console.log(input)
+        document.getElementById('cuisines').style.display = 'none'
+    }
 }
 
 function toggleMenu() {
