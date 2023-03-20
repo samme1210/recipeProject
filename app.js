@@ -5,7 +5,7 @@ const queryURL = "https://api.spoonacular.com/recipes/";
 window.onload = onloadRecipies();
 
 const loadingElements = document.querySelectorAll(".img__wrapper, .search__button");
-const allLoadingElements = document.querySelectorAll("#recipes, .buffer__wrapper, .search__button, .img__wrapper");
+const allLoadingElements = document.querySelectorAll(".buffer__wrapper, .search__button, .img__wrapper");
 
 /*
 main function fetches requested data from spoonacular api transforms the promise into readable data, 
@@ -24,7 +24,7 @@ async function main(input) {
 
 function triggerLoading() {
     if (window.document.title == "SUMYUM-RECIPES") {
-        const recipeElems = document.querySelectorAll("#recipes, .buffer__wrapper, .search__button")
+        const recipeElems = document.querySelectorAll(".buffer__wrapper, .search__button")
         recipeElems.forEach((element) => element.classList.add("loading"));
     }
 }
@@ -70,14 +70,14 @@ allowing the data from spoonacular api to be customised using css
 function recipeHTML(recipe) {
     return `<div class="recipe__card--wrapper">
         <div class="card__img--wrapper">
-            <img class="card__imgs" src="${recipe.image}" alt="Not Available"></img>
+            <img class="card__imgs" src="${recipe.image}" alt="Image Not Available"></img>
         </div>
         <div class="card__text--wrapper">
             <div class="card__title--wrapper">
                 <h3 class="card__title">${recipe.title}</h3>
             </div>
             <div class="card__tags">
-                <div id="cuisines" class="card__tag--wrapper">
+                <div id="1" class="card__tag--wrapper">
                     <h4 class="card__tag">${refine(recipe.cuisines[0])}</h4>
                 </div>
                 <div id="dishTypes" class="card__tag--wrapper">
@@ -104,10 +104,7 @@ function refine(input) {
     console.log(input)
     if (input !== undefined) {
         return input;
-    } else {
-        console.log(input)
-        document.getElementById('cuisines').style.display = 'none'
-    }
+    } 
 }
 
 function toggleMenu() {

@@ -634,37 +634,6 @@ footer {
     }
 }
 
-.skeleton__overlay {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin: 25px 1%;
-    overflow: hidden;
-    width: 200px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.15);
-}
-
-.loading .skeleton__overlay {
-    display: flex;
-}
-
-.skeleton__img--wrapper {
-    width: 100%;
-    height: 100px;
-    background-color: #f0f0f08b;
-}
-
-.skeleton__text--wrapper {
-    width: 100%;
-    height: 170px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(254,236,190,1) 100%);
-    border-top: solid 2px rgb(252, 164, 1);
-}
-
 /*
     RECIPE CARD
 */
@@ -689,6 +658,7 @@ footer {
     border-radius: 5px;
     box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.15);
     transition: all 300ms ease;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(254,236,190,1) 100%);
 }
 
 .recipe__card--wrapper:hover {
@@ -696,9 +666,12 @@ footer {
 }
 
 .card__img--wrapper {
-    width: 100%;
+    width: 90%;
     height: 100px;
     overflow: hidden;
+    margin-top: 5%;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .card__img {
@@ -712,8 +685,6 @@ footer {
     height: 170px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(254,236,190,1) 100%);
-    border-top: solid 2px rgb(252, 164, 1);
 }
 
 .card__title--wrapper {
@@ -750,7 +721,6 @@ footer {
     margin: 1px;
     border: 1px solid #2f2f2f;
     border-radius: 10px;
-    background-color: #dedbdb99;
 }
 
 #cuisines {
