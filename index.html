@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,29 @@
     <script src="https://kit.fontawesome.com/1636643afb.js" crossorigin="anonymous"></script>
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("atXaPAG5EvldD1P_r");
+        })();
+    </script>
 </head>
+
 <body>
     <section class="landing__page">
         <nav>
             <div class="logo__wrapper">
                 <img src="/assets/Screenshot 2023-02-25 at 21.26.24.png" alt="null" class="logo">
-            </div>                
+            </div>
             <ul class="nav__links">
                 <li>
                     <a href="food.html" class="nav__link link__hover-effect">Recipes</a>
                 </li>
                 <li>
-                    <a href="" class="nav__link link__hover-effect">About Us</a>
+                    <a onclick="toggleModal()" class="nav__link link__hover-effect">About Us</a>
                 </li>
                 <li>
-                    <a href="" class="nav__link nav__link--last">Contact</a>
+                    <a onclick="toggleModal()" class="nav__link nav__link--last">Contact</a>
                 </li>
             </ul>
             <button class="menu__toggle" onclick="toggleMenu()">
@@ -32,13 +40,13 @@
             <div class="menu__backdrop">
                 <ul class="menu__links">
                     <li class="menu__list">
-                        <a href="food.html" class="menu__link" onclick="toggleMenu()">Recipes</a>
+                        <a href="food.html" class="menu__link" onclick="">Recipes</a>
                     </li>
                     <li class="menu__list">
-                        <a href="" class="menu__link" onclick="toggleMenu()">About Us</a>
+                        <a href="" class="menu__link" onclick="toggleModal()">About Us</a>
                     </li>
                     <li class="menu__list">
-                        <a class="menu__link">Contact</a>
+                        <a class="menu__link" onclick="toggleModal()">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -46,7 +54,8 @@
         <header>
             <div class="header__container">
                 <h1 class="slogan">Use The Worlds Leading Recipe Bank For Your Next Meal</h1>
-                <h2 class="slogan-subtitle">Find That&nbsp;<span class="highlight">Recipe</span>&nbsp;You're Craving</h2>
+                <h2 class="slogan-subtitle">Find That&nbsp;<span class="highlight">Recipe</span>&nbsp;You're Craving
+                </h2>
                 <form class="search__form">
                     <input type="text" id="landing__input-field" placeholder="Find the Yum" name="userInput">
                     <div class="search__btn--wrapper">
@@ -56,6 +65,70 @@
                         </button>
                     </div>
                 </form>
+            </div>
+            <div class="modal">
+                <div class="modal__half modal__about">
+                    <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+                    <h4 class="modal__subtitle modal__subtitle--about">Frontend Software Engineer</h5>
+                        <p class="modal__para">Hi there, I hope you enjoyed interacting with my project 'SUMYUM'. My
+                            goal was to showcase my skills in frontend development and UI design by creating a web
+                            application that utilizes an API to display real-time data in a visually appealing and
+                            user-friendly way. I prioritized responsive design, animations, and loading states to
+                            enhance the browsing experience, and integrated the API to provide dynamic updates. Overall,
+                            SUMYUM is a functional and engaging web application that demonstrates my expertise in
+                            frontend development and UI design.
+                        </p>
+                        <div class="modal__languages">
+                            <figure class="modal__language">
+                                <i class="modal__language--img fa-brands fa-html5"></i>
+                                <span class="language__name">HTML</span>
+                            </figure>
+                            <figure class="modal__language">
+                                <i class="modal__language--img fa-brands fa-css3-alt"></i>
+                                <span class="language__name">CSS</span>
+                            </figure>
+                            <figure class="modal__language">
+                                <i class="modal__language--img fa-brands fa-js"></i>
+                                <span class="language__name">JAVASCRIPT</span>
+                            </figure>
+                            <figure class="modal__language">
+                                <i class="modal__language--img fa-brands fa-react"></i>
+                                <span class="language__name">REACT</span>
+                            </figure>
+                        </div>
+                </div>
+                <div class="modal__half modal__contact">
+                    <i class="fas fa-times modal__exit btn" onclick="toggleModal()"></i>
+                    <h3 class="modal__title modal__title--contact">
+                        Let's have a chat!
+                    </h3>
+                    <h4 class="modal__subtitle modal__subtitle--contact">
+                        I'm currently open to new oppertunities
+                    </h4>
+                    <form id="contact__form" onsubmit="contact(event)">
+                        <div class="form__item">
+                            <label class="form__item--label">Name</label>
+                            <input type="text" class="contact__input" name="user_name" required></input>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__item--label">Email</label>
+                            <input type="Email" class="contact__input" name="user_email" required></input>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__item--label">Message</label>
+                            <textarea type="text" class="contact__message" name="message" required></textarea>
+                        </div>
+                        <div class="contact__btn--wrapper">
+                            <button id="contact__submit" class="contact__submit">send it my way</button>
+                        </div>
+                    </form>
+                    <div class="modal__overlay modal__overlay--loading">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="modal__overlay modal__overlay--success">
+                        Thanks for the message! Looking forward to speaking to you soon
+                    </div>
+                </div>
             </div>
         </header>
     </section>
@@ -84,7 +157,7 @@
                         <a href="#" class="footer__link">
                             <div class="footer__logo--wrapper">
                                 <img src="/assets/Screenshot 2023-02-25 at 21.26.24.png" alt="null" class="logo">
-                            </div> 
+                            </div>
                         </a>
                         <a href="" class="footer__link link__hover-effect">
                             <li>Contact</li>
@@ -94,6 +167,7 @@
                 </div>
             </div>
         </div>
-    </footer> 
+    </footer>
 </body>
+
 </html>
