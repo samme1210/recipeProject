@@ -67,38 +67,46 @@
                 </form>
             </div>
             <div class="modal">
+                <i class="fas fa-times modal__exit btn" onclick="toggleModal()"></i>
                 <div class="modal__half modal__about">
                     <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
                     <h4 class="modal__subtitle modal__subtitle--about">Frontend Software Engineer</h5>
-                        <p class="modal__para">Hi there, I hope you enjoyed interacting with my project 'SUMYUM'. My
-                            goal was to showcase my skills in frontend development and UI design by creating a web
-                            application that utilizes an API to display real-time data in a visually appealing and
-                            user-friendly way. I prioritized responsive design, animations, and loading states to
-                            enhance the browsing experience, and integrated the API to provide dynamic updates. Overall,
-                            SUMYUM is a functional and engaging web application that demonstrates my expertise in
-                            frontend development and UI design.
-                        </p>
-                        <div class="modal__languages">
-                            <figure class="modal__language">
+                    <p class="modal__para">Hi there, I hope you enjoyed interacting with my project 'SUMYUM'. My
+                        goal was to showcase my skills in frontend development and UI design by creating a web
+                        application that utilizes an API to display real-time data in a visually appealing and
+                        user-friendly way. I prioritized responsive design, animations, and loading states to
+                        enhance the browsing experience, and integrated the API to provide dynamic updates. Overall,
+                        SUMYUM is a functional and engaging web application that demonstrates my expertise in
+                        frontend development and UI design.
+                    </p>
+                    <div class="modal__languages">
+                        <div class="modal__language">
+                            <div class="icon__wrapper">
                                 <i class="modal__language--img fa-brands fa-html5"></i>
-                                <span class="language__name">HTML</span>
-                            </figure>
-                            <figure class="modal__language">
-                                <i class="modal__language--img fa-brands fa-css3-alt"></i>
-                                <span class="language__name">CSS</span>
-                            </figure>
-                            <figure class="modal__language">
-                                <i class="modal__language--img fa-brands fa-js"></i>
-                                <span class="language__name">JAVASCRIPT</span>
-                            </figure>
-                            <figure class="modal__language">
-                                <i class="modal__language--img fa-brands fa-react"></i>
-                                <span class="language__name">REACT</span>
-                            </figure>
+                            </div>
+                            <h5 class="language__name">HTML</h5>
                         </div>
+                        <div class="modal__language">
+                            <div class="icon__wrapper">
+                                <i class="modal__language--img fa-brands fa-css3-alt"></i>
+                            </div>
+                            <h5 class="language__name">CSS</h5>
+                        </div>
+                        <div class="modal__language">
+                            <div class="icon__wrapper">
+                                <i class="modal__language--img fa-brands fa-js"></i>
+                            </div>
+                            <h5 class="language__name">JAVASCRIPT</h5>
+                        </div>
+                        <div class="modal__language">
+                            <div class="icon__wrapper">
+                                <i class="modal__language--img fa-brands fa-react"></i>
+                            </div>
+                            <h5 class="language__name">REACT</h5>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal__half modal__contact">
-                    <i class="fas fa-times modal__exit btn" onclick="toggleModal()"></i>
                     <h3 class="modal__title modal__title--contact">
                         Let's have a chat!
                     </h3>
@@ -107,19 +115,21 @@
                     </h4>
                     <form id="contact__form" onsubmit="contact(event)">
                         <div class="form__item">
-                            <label class="form__item--label">Name</label>
+                            <label class="form__item--label">Name:</label>
                             <input type="text" class="contact__input" name="user_name" required></input>
                         </div>
                         <div class="form__item">
-                            <label class="form__item--label">Email</label>
+                            <label class="form__item--label">Email:</label>
                             <input type="Email" class="contact__input" name="user_email" required></input>
                         </div>
-                        <div class="form__item">
-                            <label class="form__item--label">Message</label>
-                            <textarea type="text" class="contact__message" name="message" required></textarea>
-                        </div>
-                        <div class="contact__btn--wrapper">
-                            <button id="contact__submit" class="contact__submit">send it my way</button>
+                        <div class="modal__input--wrapper">
+                            <div class="form__item message__wrapper">
+                                <label class="form__item--label">Message:</label>
+                                <textarea type="text" class="contact__message" name="message" required></textarea>
+                            </div>
+                            <div class="contact__btn--wrapper">
+                                <button id="contact__submit" class="contact__submit">send it my way</button>
+                            </div>
                         </div>
                     </form>
                     <div class="modal__overlay modal__overlay--loading">

@@ -326,14 +326,21 @@ body.toggled {
     overflow: hidden;
     display: flex;
     visibility: hidden;
-    z-index: 999;
-    transition: visibility 300ms box-shadow 500ms ease-in;
+    opacity: 0;
+    z-index: 0;
+    box-shadow: none;
+    font-size: 10px;
+    transition: z-index 500ms ease-in;
+    transition: opacity 500ms ease;
 }
 
 .modal--open .modal {
     z-index: 999;
+    opacity: 1;
     box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
     visibility: visible;
+    transition: opacity 500ms ease;
+    transition: box-shadow 1600ms ease-in;
 }
 
 .modal--open .modal__about,
@@ -357,41 +364,46 @@ body.toggled {
 }
 
 .modal__title {
-    font-size: 44px;
+    font-size: 4.4em;
     text-align: left;
 }
 
 .modal__subtitle {
     margin: 12px 0 24px 0;
-    font-size: 20px;
+    font-size: 2em;
     text-align: left;
+}
+
+.modal__subtitle--about {
+    color: #000;
 }
 
 .modal__para {
     margin-bottom: 16px;
     line-height: 1.5;
     text-align: justify;
-    font-size: 16px;
+    font-size: 1.5em;
     font-weight: 600;
-    height: 260px;
+    height: 290px;
     width: 100%;
     overflow: hidden; 
+    word-wrap: break-word;
 }
 
 .modal__languages {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
 .modal__language {
     width: 25%;
-    padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     transition: all 300ms ease;
 }
 
@@ -406,14 +418,13 @@ body.toggled {
 
 .modal__language--img {
     width: 100%;
-    position: relative;
     color: orange;
-    font-size: 26px;
+    font-size: 4em;
 }
 
 .language__name {
-    position: absolute;
-    bottom: -10px;
+    font-size: 1.5em;
+    margin-top: 5px;
     transform: scale(0);
     transition: all 300ms ease;
 }
@@ -441,14 +452,15 @@ body.toggled {
 
 .form__item--label {
     margin-bottom: 4px;
-    font-size: 20px;
+    font-size: 2em;
 }
 
 .contact__input,
 .contact__message {
     min-width: 100%;
     max-width: 100%;
-    font-size: 18px;
+    font-size: 1.8em;
+    resize: none;
 }
 
 .contact__input {
@@ -475,7 +487,7 @@ body.toggled {
     width: 100%;
     max-width: 240px;
     padding: 12px 24px;
-    font-size: 20px;
+    font-size: 2em;
 }
 
 .contact__submit:hover {
@@ -576,7 +588,7 @@ body.toggled {
 }
 
 .search__button {
-    font-size: 24px;
+    font-size: 26px;
     position: relative;
 }
 
@@ -1036,6 +1048,67 @@ footer {
     .load-spinner {
         top: -9px;
         left: -18px;
+    }
+
+    .modal {
+        flex-direction: column;
+        align-items: center;
+        font-size: 9px;
+    }
+
+    .modal__half {
+        width: 100%;
+        height: 50%;
+        padding: 0 70px;
+        padding-top: 40px;
+    }
+
+    .modal__title {
+        text-align: left;
+    }
+    
+    .modal__subtitle {
+        margin: 8px 0 18px 0;
+        text-align: left;
+    }
+    
+    .modal__para {
+        padding-bottom: 8px;
+        line-height: 1.2;
+    }
+
+
+    #contact__form {
+        padding: 5px 0;
+    }
+
+    .form__item {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .modal__input--wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .message__wrapper {
+        width: 50%;
+        padding-right: 0px;
+    }
+
+    .contact__message {
+        resize: none;
+        height: 50px;
+    }
+
+    .contact__btn--wrapper {
+        width: 40%;
+        padding-top: 12px;
     }
 }
 
