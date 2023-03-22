@@ -310,7 +310,7 @@ body.toggled {
 }
 
 /*
-    CONTACT-MODAL
+    MODAL ABOUT
 */
 
 
@@ -356,6 +356,28 @@ body.toggled {
     transform: translate(-110%);
 }
 
+.modal__title {
+    font-size: 44px;
+    text-align: left;
+}
+
+.modal__subtitle {
+    margin: 12px 0 24px 0;
+    font-size: 20px;
+    text-align: left;
+}
+
+.modal__para {
+    margin-bottom: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 600;
+    height: 260px;
+    width: 100%;
+    overflow: hidden; 
+}
+
 .modal__languages {
     display: flex;
     flex-wrap: wrap;
@@ -396,35 +418,22 @@ body.toggled {
     transition: all 300ms ease;
 }
 
+/* 
+    MODAL CONTACT
+*/
+
 .modal__contact {
     background-color: #242424;
     color: #fff;
     transform: translateX(110%);
 }
 
-.modal__title {
-    font-size: 44px;
-    text-align: left;
-    margin-top: 100px;
-}
-
-.modal__subtitle {
-    margin: 12px 0 24px 0;
-    font-size: 20px;
-    text-align: left;
-}
-
-.modal__para {
-    margin-bottom: 12px;
-    line-height: 1.5;
-    font-size: 14px;
-    font-weight: 600;
-    overflow: hidden;
+#contact__form {
+    padding: 20px 0;
 }
 
 .form__item {
-    margin-bottom: 20px;
-    color: #fff;
+    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -432,15 +441,24 @@ body.toggled {
 
 .form__item--label {
     margin-bottom: 4px;
+    font-size: 20px;
 }
 
 .contact__input,
 .contact__message {
-    color: #fff;
+    min-width: 100%;
+    max-width: 100%;
+    font-size: 18px;
 }
 
 .contact__input {
     border-bottom: orange solid 2px;
+    color: #fff;
+}
+
+.contact__message:focus {
+    outline: 2px solid orange;
+    border-radius: 2px;
 }
 
 .contact__btn--wrapper {
